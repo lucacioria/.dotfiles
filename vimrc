@@ -11,6 +11,7 @@ set expandtab
 set sm
 set tabstop=2
 set wrap
+set vb
 
 " pathogen
 call pathogen#infect()
@@ -31,8 +32,6 @@ set ignorecase
 set hlsearch
 set smartcase
 set incsearch
-
-set cc=101
 
 " enable filetype
 filetype on
@@ -74,6 +73,17 @@ vnoremap < <gv
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " powerline
 let g:Powerline_symbols = 'fancy'
+set laststatus=2

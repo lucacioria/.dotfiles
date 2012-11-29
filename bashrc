@@ -3,6 +3,8 @@
 [ -z "$PS1" ] && return
 
 export PATH=/Users/utaal/bin:$PATH
+export PATH=/usr/local/Cellar/python/2.7.3/bin:$PATH
+export PATH=/usr/local/Cellar/go/1.0.3/bin:$PATH
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -18,7 +20,9 @@ COL_USERNAME=`tput setab 6 && tput setaf 0`
 COL_USERNAME_ARR=`tput setab 0 && tput setaf 6`
 COL_PATH=`tput setab 0 && tput setaf 12`
 COL_CLEAR=`tput setab 0 && tput setaf 15`
-PS1='$COL_USERNAME \u $COL_USERNAME_ARR$ARROW$COL_PATH \w $COL_USERNAME_ARR$SOFT_ARROW$COL_CLEAR$(__git_ps1)\n$ '
+
+GIT_PS1_SHOWDIRTYSTATE=1
+PS1='$COL_USERNAME \u $COL_USERNAME_ARR$ARROW$COL_CLEAR`__git_ps1 " %s $COL_USERNAME_ARR$SOFT_ARROW"` $COL_PATH\w $COL_CLEAR\n$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -43,7 +47,7 @@ alias ll='ls -alp'
 alias sgitc='git svn rebase && git svn dcommit'
 alias valgrind='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
 alias ssk='ssh -o TCPKeepAlive=yes'
-alias grepp='grep * --color=auto -H -n -r -e'
+alias grepp='grep . --color=auto -H -n -r -e'
 
 # git
 source /usr/local/etc/bash_completion.d/git-completion.bash
