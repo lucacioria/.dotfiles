@@ -48,14 +48,6 @@ colorscheme wombat-my
 
 let mapleader = ','
 
-" plugins
-let g:clang_complete_auto=0
-let g:SuperTabDefaultCompletionTypeDiscovery = [
-\ "&completefunc:<c-x><c-u>",
-\ "&omnifunc:<c-x><c-o>",
-\ ]
-let g:pyflakes_use_quickfix = 0
-
 " ctrlp
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$\|target$',
