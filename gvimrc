@@ -5,3 +5,4 @@ set guioptions-=LlRrb
 
 colorscheme wombat-my
 set cursorline
+
