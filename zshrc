@@ -15,7 +15,7 @@ alias ldir='ls -d */'
 alias sgitc='git svn rebase && git svn dcommit'
 alias valgrind='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
 alias ssk='ssh -o TCPKeepAlive=yes'
-alias grepp='grep . --color=auto -H -n -r -e -I'
+alias grepp='grep --color=auto -H -n -r -e'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
