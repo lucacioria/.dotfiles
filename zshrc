@@ -1,12 +1,13 @@
-path+=/Users/utaal/bin
-path+=/usr/local/Cellar/python/2.7.3/bin
-path+=/usr/local/Cellar/go/1.0.3/bin
-path+=/usr/local/Cellar/git/1.7.9.5/bin
-path+=/usr/local/Cellar/ruby/1.9.3-p0/bin
-path+=/usr/local/share/python
-path+=/usr/local/bin
-path+=/Users/utaal/Apps/bin
-path=($^path(N))
+pathdirs=(
+  /usr/local/sbin
+  /usr/local/bin
+  /Users/utaal/bin
+  /usr/local/share/python
+  /Users/utaal/Apps/bin
+)
+pathdirs=($^pathdirs(N))
+
+for dir in $pathdirs; do export PATH=$dir:$PATH; done
 
 ZSH="/Users/utaal/.zsh"
 
