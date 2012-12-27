@@ -34,3 +34,6 @@
 [submodule "vim/bundle/haskellmode"]
 	path = vim/bundle/haskellmode
 	url = https://github.com/lukerandall/haskellmode-vim.git
+[submodule "vim/bundle/scala"]
+	path = vim/bundle/scala
+	url = https://github.com/derekwyatt/vim-scala.git
