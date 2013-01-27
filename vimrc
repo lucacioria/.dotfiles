@@ -87,6 +87,8 @@ nmap <F8> :TagbarToggle<CR>
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
+" syntastic
+let g:syntastic_quiet_warnings = 1
 " haskell mode
 au BufEnter *.hs compiler ghc
 let g:haddock_browser = 'open'
