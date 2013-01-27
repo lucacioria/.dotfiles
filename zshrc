@@ -80,3 +80,11 @@ done
 
 # Load the theme
 source $ZSH/powerline.zsh-theme
+
+# vim readonly
+function vles() {
+  case $# in
+    0 ) vim -u ~/.dotfiles/.lessvimrc -;;
+    1 ) vim -u ~/.dotfiles/.lessvimrc -R $1;;
+  esac
+}
