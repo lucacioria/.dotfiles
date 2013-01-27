@@ -3,11 +3,18 @@ pathdirs=(
   /usr/local/bin
   /Users/utaal/bin
   /usr/local/share/python
-  /Users/utaal/Apps/bin
+  /Users/utaal/.cabal/bin
 )
 pathdirs=($^pathdirs(N))
 
 for dir in $pathdirs; do export PATH=$dir:$PATH; done
+
+pathdirs=(
+  /Users/utaal/Apps/bin
+)
+pathdirs=($^pathdirs(N))
+
+for dir in $pathdirs; do export PATH=$PATH:$dir; done
 
 ZSH="/Users/utaal/.zsh"
 
