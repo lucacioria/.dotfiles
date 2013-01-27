@@ -13,6 +13,8 @@ set tabstop=2
 set wrap
 set vb
 
+set noswapfile
+
 " pathogen
 call pathogen#infect()
 
