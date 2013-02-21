@@ -65,6 +65,14 @@ noremap <Leader>t :CtrlP<CR>
 vnoremap > >gv
 vnoremap < <gv
 
+" highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" the above flashes annoyingly while typing, be calmer in insert mode
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
