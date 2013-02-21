@@ -37,3 +37,12 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-hdevtools"]
+	path = vim/bundle/vim-hdevtools
+	url = https://github.com/bitc/vim-hdevtools.git
+[submodule "vim/bundle/ghcmod-vim"]
+	path = vim/bundle/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc.git
