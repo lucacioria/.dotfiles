@@ -97,3 +97,6 @@ set laststatus=2
 
 " syntastic
 let g:syntastic_quiet_warnings = 1
+
+" disable autoindent for sml
+autocmd FileType sml :set noautoindent
