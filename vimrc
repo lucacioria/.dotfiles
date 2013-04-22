@@ -57,7 +57,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': '',
   \ }
 
-nnoremap ; :
+" nnoremap ; :
 
 noremap <Leader>t :CtrlP<CR>
 
@@ -66,12 +66,14 @@ vnoremap > >gv
 vnoremap < <gv
 
 " highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=darkred guibg=#382424
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" the above flashes annoyingly while typing, be calmer in insert mode
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" " the above flashes annoyingly while typing, be calmer in insert mode
+" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -100,3 +102,12 @@ let g:syntastic_quiet_warnings = 1
 
 " disable autoindent for sml
 autocmd FileType sml :set noautoindent
+
+" splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+
