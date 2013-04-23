@@ -111,3 +111,7 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" latex
+let g:Tex_ViewRule_pdf = '/Applications/Preview.app/Contents/MacOS/Preview'
+au BufWritePost *.tex silent call Tex_RunLaTeX()
+au BufWritePost *.tex silent call Tex_ViewLaTeX()
