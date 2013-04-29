@@ -22,7 +22,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'L9'
-" conque
+Bundle 'Conque-Shell'
 " gocode
 Bundle 'kien/ctrlp.vim'
 Bundle 'Shougo/neocomplcache'
