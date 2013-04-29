@@ -40,6 +40,7 @@ Bundle 'bitc/vim-hdevtools'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'Shougo/vimproc'
 Bundle 'wlangstroth/vim-racket'
+Bundle 'lunaru/vim-twig'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
 " enable syntax highlighting
