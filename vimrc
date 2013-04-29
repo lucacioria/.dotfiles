@@ -15,8 +15,32 @@ set vb
 
 set noswapfile
 
-" pathogen
-call pathogen#infect()
+" vundle
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'L9'
+" conque
+" gocode
+Bundle 'kien/ctrlp.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'majutsushi/tagbar'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'groenewege/vim-less'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'scrooloose/syntastic'
+Bundle 'bitc/vim-hdevtools'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'Shougo/vimproc'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
 " enable syntax highlighting
 syntax on
