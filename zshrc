@@ -4,6 +4,7 @@ pathdirs=(
   /Users/utaal/bin
   /usr/local/share/python
   /Users/utaal/.cabal/bin
+  /usr/local/share/npm/bin
 )
 pathdirs=($^pathdirs(N))
 
@@ -47,7 +48,7 @@ EOBUNDLES
 antigen apply
 
 setopt auto_cd
-cdpath=($HOME/Src)
+cdpath=()
 setopt auto_pushd
 setopt rm_star_wait
 setopt vi
@@ -73,6 +74,7 @@ bindkey -v
 bindkey '^[[H' vi-beginning-of-line   # Home
 bindkey '^[[F' vi-end-of-line         # End
 bindkey "^R" history-incremental-search-backward
+bindkey '^[[A' up-line-or-search
 
 bindkey -s '^u' 'cd ..; ls^M'
 
