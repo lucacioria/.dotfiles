@@ -21,11 +21,13 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" Bundle '_js'
 Bundle 'L9'
-Bundle 'Conque-Shell'
+Bundle 'acx0/Conque-Shell'
 " gocode
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -35,13 +37,20 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'groenewege/vim-less'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 Bundle 'bitc/vim-hdevtools'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimshell'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'lunaru/vim-twig'
 Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle 'scrooloose/nerdtree'
+" vimside
+Bundle "megaannum/self"
+Bundle "megaannum/forms" 
+Bundle "aemoncannon/ensime"
+Bundle "megaannum/vimside"    
 
 " enable syntax highlighting
 syntax on
@@ -100,20 +109,20 @@ vnoremap < <gv
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" omnicomplete
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.go = '[^. *\t]\.\w*'
+" " neocomplcache
+" let g:neocomplcache_enable_at_startup = 1
+" " Use smartcase.
+" let g:neocomplcache_enable_smart_case = 1
+" " <CR>: close popup and save indent.
+" inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" " <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" " omnicomplete
+" if !exists('g:neocomplcache_omni_patterns')
+"   let g:neocomplcache_omni_patterns = {}
+" endif
+" let g:neocomplcache_omni_patterns.go = '[^. *\t]\.\w*'
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -140,3 +149,5 @@ set splitright
 let g:Tex_ViewRule_pdf = '/Applications/Preview.app/Contents/MacOS/Preview'
 au BufWritePost *.tex silent call Tex_RunLaTeX()
 au BufWritePost *.tex silent call Tex_ViewLaTeX()
+
+nmap <Leader>vs :call vimside#command#StartEnsime()
