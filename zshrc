@@ -19,6 +19,8 @@ for dir in $pathdirs; do export PATH=$PATH:$dir; done
 
 ZSH="/Users/utaal/.zsh"
 
+export LSCOLORS=cxhxfxdxbxegxdabagacad
+
 # aliases
 export CLICOLOR=1
 alias l='ls'
@@ -27,6 +29,7 @@ alias sgitc='git svn rebase && git svn dcommit'
 alias valgrind='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
 alias ssk='ssh -o TCPKeepAlive=yes'
 alias grepp='grep --color=auto -H -n -r -e'
+alias gff='git pull --ff-only'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -89,3 +92,6 @@ function vles() {
     1 ) vim -u ~/.dotfiles/.lessvimrc -R $1;;
   esac
 }
+
+# vagrant
+export VAGRANT_HOME=/Users/utaal/VMs/vagrant.d

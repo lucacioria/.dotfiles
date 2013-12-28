@@ -21,36 +21,23 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-" Bundle '_js'
+Bundle 'jonathanfilip/vim-lucius'
+
 Bundle 'L9'
-Bundle 'acx0/Conque-Shell'
-" gocode
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'jgdavey/tslime.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'groenewege/vim-less'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'derekwyatt/vim-scala'
-" Bundle 'scrooloose/syntastic'
-Bundle 'bitc/vim-hdevtools'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'lunaru/vim-twig'
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 Bundle 'scrooloose/nerdtree'
-" vimside
-Bundle "megaannum/self"
-Bundle "megaannum/forms" 
-Bundle "aemoncannon/ensime"
-Bundle "megaannum/vimside"    
+
+Bundle 'unc0/vim-gorilla-script'
+
 
 " enable syntax highlighting
 syntax on
@@ -61,7 +48,11 @@ set showmatch
 set nobackup
 
 " enable mouse
-set mouse=a
+set mouse+=a
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
 
 " incremental smartCase search with highlighting
 set ignorecase
@@ -80,7 +71,9 @@ set si
 " ctags
 set tags+=tags;$HOME
 
-colorscheme wombat-my
+colorscheme lucius
+let g:lucius_no_term_bg = 1
+LuciusBlackLowContrast
 
 let mapleader = ','
 
@@ -123,31 +116,45 @@ set listchars=tab:▸\ ,eol:¬
 "   let g:neocomplcache_omni_patterns = {}
 " endif
 " let g:neocomplcache_omni_patterns.go = '[^. *\t]\.\w*'
+"
+
+" file completion
+set wildmode=longest,list,full
+set wildmenu
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " powerline
-let g:Powerline_symbols = 'fancy'
 set laststatus=2
+set ttimeoutlen=50
+let g:airline_theme = 'simple'
+let g:airline_symbols = {}
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
 
 " syntastic
 let g:syntastic_quiet_warnings = 1
 
-" disable autoindent for sml
-autocmd FileType sml :set noautoindent
-
 " splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" latex
-let g:Tex_ViewRule_pdf = '/Applications/Preview.app/Contents/MacOS/Preview'
-au BufWritePost *.tex silent call Tex_RunLaTeX()
-au BufWritePost *.tex silent call Tex_ViewLaTeX()
+" " latex
+" let g:Tex_ViewRule_pdf = '/Applications/Preview.app/Contents/MacOS/Preview'
+" au BufWritePost *.tex silent call Tex_RunLaTeX()
+" au BufWritePost *.tex silent call Tex_ViewLaTeX()
+"
 
-nmap <Leader>vs :call vimside#command#StartEnsime()
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
