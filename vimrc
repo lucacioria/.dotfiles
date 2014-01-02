@@ -26,18 +26,10 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'L9'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'jgdavey/tslime.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'scrooloose/nerdtree'
-
-Bundle 'unc0/vim-gorilla-script'
-
+Bundle 'tpope/vim-vinegar'
 
 " enable syntax highlighting
 syntax on
@@ -121,9 +113,6 @@ set listchars=tab:▸\ ,eol:¬
 " file completion
 set wildmode=longest,list,full
 set wildmenu
-
-" tagbar
-nmap <F8> :TagbarToggle<CR>
 
 " powerline
 set laststatus=2

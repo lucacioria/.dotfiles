@@ -27,7 +27,6 @@ alias l='ls'
 alias ldir='ls -d */'
 alias sgitc='git svn rebase && git svn dcommit'
 alias valgrind='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
-alias ssk='ssh -o TCPKeepAlive=yes'
 alias grepp='grep --color=auto -H -n -r -e'
 alias gff='git pull --ff-only'
 
@@ -54,7 +53,6 @@ setopt auto_cd
 cdpath=()
 setopt auto_pushd
 setopt rm_star_wait
-setopt vi
 export EDITOR="vim"
 
 HISTFILE=~/.history
@@ -74,12 +72,8 @@ zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
 bindkey -v
-bindkey '^[[H' vi-beginning-of-line   # Home
-bindkey '^[[F' vi-end-of-line         # End
-bindkey "^R" history-incremental-search-backward
-bindkey '^[[A' up-line-or-search
-
 bindkey -s '^u' 'cd ..; ls^M'
+bindkey -s '^l' 'ls^M'
 
 # Load the theme
 setopt prompt_subst
