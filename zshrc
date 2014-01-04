@@ -71,9 +71,14 @@ zstyle ':completion:*' menu select=0
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
+setopt vi
 bindkey -v
 bindkey -s '^u' 'cd ..; ls^M'
 bindkey -s '^l' 'ls^M'
+
+# Fix home/end
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 # Load the theme
 setopt prompt_subst
