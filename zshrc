@@ -80,6 +80,10 @@ bindkey -s '^l' 'ls^M'
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
+# search
+bindkey "^R" history-incremental-search-backward
+bindkey "^[[A" up-line-or-search
+
 # Load the theme
 setopt prompt_subst
 source $ZSH/powerline.zsh-theme
