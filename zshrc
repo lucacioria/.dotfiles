@@ -1,7 +1,7 @@
 pathdirs=(
   /usr/local/sbin
   /usr/local/bin
-  /Users/utaal/bin
+  /Users/utaal/Bin
   /usr/local/share/python
   /Users/utaal/.cabal/bin
   /usr/local/share/npm/bin
@@ -29,6 +29,7 @@ alias sgitc='git svn rebase && git svn dcommit'
 alias valgrind='valgrind --leak-check=full --show-possibly-lost=no --dsymutil=yes'
 alias grepp='grep --color=auto -H -n -r -e'
 alias gff='git pull --ff-only'
+alias ssh='LC_ALL=en_US.UTF-8 ssh'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -97,4 +98,4 @@ function vles() {
 }
 
 # vagrant
-export VAGRANT_HOME=/Users/utaal/VMs/vagrant.d
+export VAGRANT_HOME=/Volumes/VMs/Vagrant/vagrant.d

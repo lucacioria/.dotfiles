@@ -30,6 +30,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-vinegar'
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'Shougo/neocomplete.vim'
+
+Bundle 'derekwyatt/vim-scala'
 
 " enable syntax highlighting
 syntax on
