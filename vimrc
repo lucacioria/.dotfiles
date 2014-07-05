@@ -1,4 +1,5 @@
 set nocompatible
+" filetype off 
 
 set backup
 set guioptions-=T
@@ -16,25 +17,43 @@ set vb
 set noswapfile
 
 " vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'jonathanfilip/vim-lucius'
+Plugin 'jonathanfilip/vim-lucius'
 
-Bundle 'L9'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'jgdavey/tslime.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-vinegar'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'L9'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-vinegar'
+Plugin 'airblade/vim-gitgutter'
 
-Bundle 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 
-Bundle 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'digitaltoad/vim-jade'
+
+Plugin 'pangloss/vim-javascript'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " enable syntax highlighting
 syntax on
@@ -57,10 +76,11 @@ set hlsearch
 set smartcase
 set incsearch
 
-" enable filetype
-filetype on
-filetype plugin on
-filetype indent on
+" enable filetype (righe sotto di andre commentate per vundle)
+" filetype on
+" filetype plugin on
+" filetype indent on
+filetype off
 
 " smart indent
 set si
