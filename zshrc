@@ -28,21 +28,23 @@ export CLICOLOR=1
 # alias grepp='grep --color=auto -H -n -r -e'
 # alias gff='git pull --ff-only'
 # alias ssh='LC_ALL=en_US.UTF-8 ssh'
+alias buildo='cd /Users/luca/Documents/buildo/repo/'
 alias gll='git log --oneline --decorate --graph --all'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
 # Antigen
 source /Users/luca/.zsh/antigen/antigen.zsh
-antigen bundles <<EOBUNDLES
+#  bundles che ho tolto per ora..
 #  robbyrussell/oh-my-zsh lib/git.zsh 
+antigen bundles <<EOBUNDLES
   git
   osx
   zsh-users/zsh-syntax-highlighting
@@ -100,3 +102,6 @@ function vles() {
 
 # vagrant
 export VAGRANT_HOME=/Volumes/VMs/Vagrant/vagrant.d
+
+# source completions
+source ~/.zsh/completions/tmuxinator.zsh

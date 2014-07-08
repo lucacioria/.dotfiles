@@ -39,6 +39,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'digitaltoad/vim-jade'
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,10 +78,10 @@ set smartcase
 set incsearch
 
 " enable filetype (righe sotto di andre commentate per vundle)
-" filetype on
-" filetype plugin on
-" filetype indent on
-filetype off
+filetype on
+filetype plugin on
+filetype indent on
+" filetype off
 
 " smart indent
 set si
@@ -88,9 +89,12 @@ set si
 " ctags
 set tags+=tags;$HOME
 
-colorscheme lucius
-let g:lucius_no_term_bg = 1
-LuciusBlackLowContrast
+" colorscheme lucius (era quello di andre)
+" let g:lucius_no_term_bg = 1
+" LuciusBlackLowContrast
+syntax enable
+set background=dark
+colorscheme solarized
 
 let mapleader = ','
 
