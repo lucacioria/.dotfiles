@@ -49,7 +49,9 @@ antigen bundles <<EOBUNDLES
   osx
   zsh-users/zsh-syntax-highlighting
 EOBUNDLES
+antigen theme agnoster
 antigen apply
+
 
 setopt auto_cd
 cdpath=()
@@ -68,7 +70,8 @@ setopt hist_reduce_blanks
 setopt hist_verify
 setopt extended_history
 
-LANG=en_US.utf8
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=0
@@ -90,7 +93,7 @@ bindkey "^[[A" up-line-or-search
 
 # Load the theme
 setopt prompt_subst
-source $ZSH/agnoster.zsh-theme
+# source $ZSH/agnoster.zsh-theme
 
 # vim readonly
 function vles() {
@@ -105,3 +108,9 @@ export VAGRANT_HOME=/Volumes/VMs/Vagrant/vagrant.d
 
 # source completions
 source ~/.zsh/completions/tmuxinator.zsh
+
+# some git shit from oh my zsh useful for agnoster theme..
+source ~/.zsh/git.zsh
+
+# aliases file, useful to dump aliases to..
+source ~/.zsh/aliases.zsh
