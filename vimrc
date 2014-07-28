@@ -18,7 +18,7 @@ set number "line numbers
 
 set noswapfile
 set ttimeoutlen=50
-
+set backspace=2 " make backspace work like most other apps and delete even before start
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -80,6 +80,9 @@ endif
 " block cursor for normal mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" exit insert mode with lk
+:inoremap lk <ESC>
 
 " incremental smartCase search with highlighting
 set ignorecase
