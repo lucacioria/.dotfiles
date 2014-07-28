@@ -5,7 +5,6 @@ set backup
 set guioptions-=T
 set mousehide
 set ruler
-" set autoindent
 set softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -13,8 +12,12 @@ set sm
 set tabstop=2
 set wrap
 set vb
+set autoindent
+set smartindent
+set number "line numbers
 
 set noswapfile
+set ttimeoutlen=50
 
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -39,7 +42,9 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'digitaltoad/vim-jade'
 
 Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -71,6 +76,11 @@ if &term =~ '^screen'
   set ttymouse=xterm2
 endif
 
+" slim cursor for insert mode
+" block cursor for normal mode
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 " incremental smartCase search with highlighting
 set ignorecase
 set hlsearch
@@ -100,13 +110,17 @@ let mapleader = ','
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|build$\|target$',
+  \ 'dir':  'tmp$\|\.git$\|\.hg$\|\.svn$\|build$\|target$',
   \ 'file': '\.class$\|\.so$\|\.dll$',
   \ 'link': '',
   \ }
 
-" nnoremap ; :
+" don't blink the cursor
+set guicursor+=i:blinkwait0
 
+" user j/k to navigate autocomplete suggestions
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 noremap <Leader>t :CtrlP<CR>
 
 "better indentation (keeps selection)
@@ -122,22 +136,6 @@ vnoremap < <gv
 " autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
-
-" " neocomplcache
-" let g:neocomplcache_enable_at_startup = 1
-" " Use smartcase.
-" let g:neocomplcache_enable_smart_case = 1
-" " <CR>: close popup and save indent.
-" inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" " <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-" " omnicomplete
-" if !exists('g:neocomplcache_omni_patterns')
-"   let g:neocomplcache_omni_patterns = {}
-" endif
-" let g:neocomplcache_omni_patterns.go = '[^. *\t]\.\w*'
-"
 
 " file completion
 set wildmode=longest,list,full
@@ -176,3 +174,50 @@ set splitright
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
+
+" NEOCOMPLETE STUFF TAKEN FROM THE EXAMPLE CONFIG IN THE REPO!!
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+" let g:neocomplete#sources#dictionary#dictionaries = {
+"     \ 'default' : '',
+"     \ 'vimshell' : $HOME.'/.vimshell_hist',
+"     \ 'scheme' : $HOME.'/.gosh_completions'
+"         \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
