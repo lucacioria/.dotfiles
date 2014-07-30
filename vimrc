@@ -45,6 +45,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -158,7 +160,7 @@ let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
 " syntastic
-let g:syntastic_quiet_warnings = 1
+" let g:syntastic_quiet_warnings = 1
 
 " splits
 " nnoremap <C-J> <C-W><C-J>
