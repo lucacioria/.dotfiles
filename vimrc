@@ -126,11 +126,25 @@ set guicursor+=i:blinkwait0
 " user j/k to navigate autocomplete suggestions
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+" new empty line where cursor is
+imap <C-c> <CR><Esc>O
+
+" ctrl P shortcut
 noremap <Leader>t :CtrlP<CR>
+
+" \ save all open file
+nnoremap \ :wa<CR>
 
 "better indentation (keeps selection)
 vnoremap > >gv
 vnoremap < <gv
+
+" diff against last saved version
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+     \ | wincmd p | diffthis
+endif 
 
 " highlight trailing whitespace
 " highlight ExtraWhitespace ctermbg=darkred guibg=#382424
