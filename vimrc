@@ -115,7 +115,7 @@ let mapleader = ','
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  'tmp$\|\.git$\|\.hg$\|\.svn$\|build$\|target$',
+  \ 'dir':  'tmp$\|\.git$\|\.hg$\|\.svn$\|build$\|target$\|node_modules$\|bower_components$',
   \ 'file': '\.class$\|\.so$\|\.dll$',
   \ 'link': '',
   \ }
