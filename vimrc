@@ -126,10 +126,6 @@ let g:ctrlp_custom_ignore = {
 " don't blink the cursor
 set guicursor+=i:blinkwait0
 
-" user j/k to navigate autocomplete suggestions
-inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
-inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
-
 " new empty line where cursor is
 imap <C-c> <CR><Esc>O
 
