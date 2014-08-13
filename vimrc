@@ -136,6 +136,18 @@ noremap <Leader>t :CtrlP<CR>
 " \ save all open file
 nnoremap \ :wa<CR>
 
+" rerun macro q with space
+nnoremap <Space> @q
+
+" move 5 lines up
+nnoremap <c-u> 5<c-y>
+
+" move 5 lines down
+nnoremap <c-d> 5<c-e>
+
+" after yank in visual mode move cursor to end of selected area instead of start
+vmap y y`]
+
 "better indentation (keeps selection)
 vnoremap > >gv
 vnoremap < <gv
