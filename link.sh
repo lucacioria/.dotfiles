@@ -5,5 +5,6 @@ ln -s ~/.dotfiles/vim ~/.vim
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/zsh ~/.zsh
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/gitignore ~/.gitignore
 
 git submodule update --init
