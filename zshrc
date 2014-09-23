@@ -114,3 +114,5 @@ source ~/.zsh/git.zsh
 
 # aliases file, useful to dump aliases to..
 source ~/.zsh/aliases.zsh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
