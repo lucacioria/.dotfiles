@@ -50,6 +50,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -157,13 +158,9 @@ if !exists(":DiffOrig")
      \ | wincmd p | diffthis
 endif 
 
-" highlight trailing whitespace
-" highlight ExtraWhitespace ctermbg=darkred guibg=#382424
-" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" " the above flashes annoyingly while typing, be calmer in insert mode
-" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" vim better whitespace plugin config
+autocmd FileType javascript,ruby,html,css,coffee,json autocmd BufWritePre <buffer> StripWhitespace
+
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
