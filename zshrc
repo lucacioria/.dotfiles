@@ -29,7 +29,6 @@ export CLICOLOR=1
 # alias gff='git pull --ff-only'
 # alias ssh='LC_ALL=en_US.UTF-8 ssh'
 alias buildo='cd /Users/luca/Documents/buildo/repo/'
-alias gll='git log --oneline --decorate --graph --all'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,6 +51,10 @@ EOBUNDLES
 antigen theme agnoster
 antigen apply
 
+# aliases (after antigen to overwrite git alialses)
+alias gl='git pull --ff-only'
+alias gll='git log --oneline --decorate --graph --all'
+alias gco='git checkout'
 
 setopt auto_cd
 cdpath=()
@@ -115,4 +118,11 @@ source ~/.zsh/git.zsh
 # aliases file, useful to dump aliases to..
 source ~/.zsh/aliases.zsh
 
+# source nvm (node version manager)
+source ~/.nvm/nvm.sh
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# python stuff
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper_lazy.sh

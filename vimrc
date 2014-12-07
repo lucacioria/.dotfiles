@@ -1,5 +1,5 @@
 set nocompatible
-" filetype off 
+" filetype off
 
 set backup
 set guioptions-=T
@@ -39,6 +39,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'Shougo/neocomplete.vim'
+
+Plugin 'majutsushi/tagbar'
 
 Plugin 'derekwyatt/vim-scala'
 Plugin 'digitaltoad/vim-jade'
@@ -156,7 +158,7 @@ vnoremap < <gv
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
      \ | wincmd p | diffthis
-endif 
+endif
 
 " vim better whitespace plugin config
 autocmd FileType javascript,ruby,html,css,coffee,json autocmd BufWritePre <buffer> StripWhitespace
@@ -204,6 +206,10 @@ vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
 
+" nerdTree config stuff
+" ignore stupid extensions
+let NERDTreeIgnore = ['\.pyc$']
+
 " NEOCOMPLETE STUFF TAKEN FROM THE EXAMPLE CONFIG IN THE REPO!!
 
 " Disable AutoComplPop.
@@ -234,6 +240,9 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
+
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
