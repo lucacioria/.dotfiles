@@ -11,6 +11,8 @@ for dir in $pathdirs; do export PATH=$dir:$PATH; done
 
 pathdirs=(
   /Users/luca/bin
+  /Users/luca/Documents/buildo/github/infra/scripts/github
+  /Users/luca/Documents/buildo/github/infra/scripts/devops
 )
 pathdirs=($^pathdirs(N))
 
