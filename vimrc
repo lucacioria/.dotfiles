@@ -211,6 +211,7 @@ nmap <C-c>r <Plug>SetTmuxVars
 " nerdTree config stuff
 " ignore stupid extensions
 let NERDTreeIgnore = ['\.pyc$']
+:nmap ,r :NERDTreeFind<CR>
 
 " NEOCOMPLETE STUFF TAKEN FROM THE EXAMPLE CONFIG IN THE REPO!!
 
