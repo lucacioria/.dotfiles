@@ -15,6 +15,7 @@ set vb
 set autoindent
 set smartindent
 set number "line numbers
+let &colorcolumn=join(range(101,999),",")
 
 set noswapfile
 set ttimeoutlen=50
