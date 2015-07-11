@@ -54,6 +54,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Lokaltog/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -262,3 +263,11 @@ inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+" EasyMotion config
+" remap vim search to easymotion search
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+map <F2> /["=]<CR>
