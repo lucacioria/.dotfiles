@@ -1,5 +1,0 @@
-
-set nocompatible
-syntax on
-nnoremap ; :
-noremap q :q!<CR>
