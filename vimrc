@@ -48,7 +48,6 @@ Plugin 'digitaltoad/vim-jade'
 Bundle 'rking/ag.vim'
 
 Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -112,9 +111,6 @@ set si
 " ctags
 set tags+=tags;$HOME
 
-" colorscheme lucius (era quello di andre)
-" let g:lucius_no_term_bg = 1
-" LuciusBlackLowContrast
 syntax enable
 set background=dark
 colorscheme solarized

@@ -108,9 +108,6 @@ function vles() {
   esac
 }
 
-# vagrant
-export VAGRANT_HOME=/Volumes/VMs/Vagrant/vagrant.d
-
 # source completions
 source ~/.zsh/completions/tmuxinator.zsh
 
@@ -127,4 +124,3 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # python stuff
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper_lazy.sh
